@@ -9,28 +9,28 @@ export type ExtraInfoType = {
 export const extraInfo: ExtraInfoType[] = [
   {
     id: 1,
-    titleBeforSubmit: "Portfolio not Provided",
+    titleBeforSubmit: "Add Portfolio",
     titleAfterSubmit: "Portfolio",
     placeholder: "https//:example.com",
     inputName: "portfolio",
   },
   {
     id: 2,
-    titleBeforSubmit: "Github not Provided",
+    titleBeforSubmit: "Add Github",
     titleAfterSubmit: "Github",
     placeholder: "https//:github/username.com",
     inputName: "github",
   },
   {
     id: 3,
-    titleBeforSubmit: "Linkedin not Provided",
+    titleBeforSubmit: "Add Linkedin",
     titleAfterSubmit: "Linkedin",
     placeholder: "https//:linkedin/username_ID.com",
     inputName: "linkedin",
   },
   {
     id: 4,
-    titleBeforSubmit: "Email not Provided",
+    titleBeforSubmit: "Add Email",
     titleAfterSubmit: "Send an Email",
     placeholder: "GiaBaghashvili@gmail.com",
     inputName: "email",

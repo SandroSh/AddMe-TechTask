@@ -16,6 +16,7 @@ button:focus {
 .main-div {
   background-image: url("./assets/background.png");
   background-size: cover;
+ 
 }
 .inner-div {
   background: rgba(255, 255, 255, 0.35);
@@ -63,6 +64,7 @@ button:hover {
 
 .info-div {
   width: 420px;
+  min-width: 250px;
   height: 110px;
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -75,10 +77,53 @@ button:hover {
 .info-img-wrapper img {
   cursor: pointer;
   width: 44px;
-  top: -18px;
-  right: -18px;
+  top: -12px;
+  right: -12px;
   &:hover {
     transition: 1s;
     transform: scale(1.2);
+  }
+}
+
+.active-component:hover {
+  transition: 1s;
+  transform: scale(1.05);
+}
+
+.newTabImage {
+  width: 42px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  position: absolute;
+  right: -12px;
+  bottom: -12px;
+  filter: invert(1);
+  &:hover {
+    transform: rotate(30deg) scale(1.1);
+    transition: 1s;
+  }
+}
+
+@media (max-width:850px) {
+  .main-div{
+    display: flex;
+  }
+  .info-div {
+    width: 320px;
+    height: 80px;
+    font-size: 18px;
+  }
+  .profile-div{
+    margin-top: 10px;
+  }
+  .component-div{
+    margin-top: 10px !important;
+  }
+  input{
+    height: 40px;
+  }
+  button{
+    height: 30px;
+    line-height:0 !important;
   }
 }

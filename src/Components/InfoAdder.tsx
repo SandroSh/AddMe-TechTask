@@ -51,7 +51,7 @@ const InfoAdder = ({ data }: { data: ExtraInfoType }) => {
           toast('Please Enter valid Website Url, webpage has to be start with "https://"')
           break;
         case 'email':
-          toast('Please Enter valid Email, Email must contain @ ')
+          toast('Please Enter valid Email')
           break;
         default:
           break;
@@ -61,12 +61,12 @@ const InfoAdder = ({ data }: { data: ExtraInfoType }) => {
   }
 
   return (
-    <div className="m-5">
-      <div className="info-div mb-5 d-flex flex-column align-items-center justify-content-center text-white">
+    <div className='component-div mt-4'>
+      <div className="info-div d-flex flex-column align-items-center justify-content-center text-white extra-info-div">
         {
           !toggleAdd ?
             <div className=" d-flex w-100 justify-content-end info-img-wrapper">
-              <img src="src/assets/addIcon.svg" alt="Add Icon" className="position-absolute" onClick={() => setToggleAdd(!toggleAdd)} />
+              <img src={detector ? "src/assets/yellowAddIcon.svg" : "src/assets/greenAddIcon.svg"} alt="Add Icon" className="position-absolute" onClick={() => setToggleAdd(!toggleAdd)} />
             </div>
             :
             null
@@ -75,7 +75,12 @@ const InfoAdder = ({ data }: { data: ExtraInfoType }) => {
 
         {
           !toggleAdd ?
-            <h3>{detector && userData[detector] ?  data.titleAfterSubmit : data.titleBeforSubmit }</h3>
+            <div className="d-flex w-100 justify-content-evenly align-items-center">
+              <h3>{detector && userData[detector] ? data.titleAfterSubmit : data.titleBeforSubmit}</h3>
+              {
+                detector && userData[detector] ? <img src="src/assets/goTo.svg" alt="new tab icon" className="position-absolute newTabImage"/> : null
+              }
+            </div>
             :
             <div className="d-flex w-100 flex-column justify-content-start p-5">
               <label className="form-label fs-5 w-100 text-white ">

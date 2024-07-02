@@ -4,9 +4,6 @@ import Register from './Components/Register'
 import Profile from './Components/Profile'
 
 
-
-
-
 function App() {
   return (
     <>
