@@ -1,41 +1,36 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-
-export interface userDataType{
-  name:string;
-  position:string;
-  img:File | undefined;
-  address:string;
-  contact:{
-    email:string;
-    linkedin:string;
-    facebook:string;
-  }
+export interface userDataType {
+  name: string;
+  position: string;
+  img: string | ArrayBuffer | null;
+  address: string;
+  email: string;
+  linkedin: string;
+  portfolio: string;
+  github: string;
 }
 
-const initialState : userDataType = {
+export const initialState: userDataType = {
   name: "",
   position: "",
-  img: undefined,
+  img: null,
   address: "",
-  contact: {
-    email: "",
-    linkedin: "",
-    facebook: ""
-  }
-}
-
-
+  email: "",
+  linkedin: "",
+  portfolio: "",
+  github: "",
+};
 
 const userSlice = createSlice({
-  name:'userData',
+  name: "userData",
   initialState,
-  reducers:{
-    createUser: (state, action:PayloadAction<userDataType>) => {
-      state = {...action.payload};
-    }
-  }
+  reducers: {
+    createUser: (state, action: PayloadAction<userDataType>) => {
+      Object.assign(state, action.payload);
+    },
+  },
 });
 
-export const {createUser}= userSlice.actions;
+export const { createUser } = userSlice.actions;
 export default userSlice.reducer;
