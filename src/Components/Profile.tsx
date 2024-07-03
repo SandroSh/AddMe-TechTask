@@ -4,7 +4,10 @@ import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import InfoAdder from "./InfoAdder";
 import { extraInfo } from "../Constants/data";
 
-
+import EmailIcon from '../assets/email.svg'
+import FacebookIcon from '../assets/facebook.svg'
+import LinkedinIcon from '../assets/linkedin.svg'
+import BehanceIcon from '../assets/behance.svg'
 const Profile = () => {
   const userData = useSelector((state: RootState) => state.userData);
 
@@ -28,12 +31,11 @@ const Profile = () => {
           </div>
 
           <div className="d-flex justify-content-between align-items-center icons-wrapper">
-            <img src="src/assets/email.svg" alt="Email Logo" className="color-white" />
-            <img src="src/assets/linkedin.svg" alt="Linkedin Logo" />
-            <img src="src/assets/facebook.svg" alt="Facebook logo" />
-            <img src="src/assets/behance.svg" alt="Behance logo" />
+            <img src={EmailIcon} alt="Email Logo" />
+            <img src={LinkedinIcon} alt="Linkedin Logo" />
+            <img src={FacebookIcon} alt="Facebook logo" />
+            <img src={BehanceIcon} alt="Behance logo" />
           </div>
-
         </div>
 
         <div>

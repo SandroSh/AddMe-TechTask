@@ -5,7 +5,9 @@ import toast, { Toaster } from 'react-hot-toast';
 import { RootState } from "../state/store";
 import { createUser } from "../state/user/userSlice";
 
-
+import GoToIcon from '../assets/goTo.svg'
+import YellowAddIcon from '../assets/yellowAddIcon.svg'
+import GreenAddIcon from '../assets/greenAddIcon.svg'
 
 const InfoAdder = ({ data }: { data: ExtraInfoType }) => {
   const dispatch = useDispatch();
@@ -66,7 +68,7 @@ const InfoAdder = ({ data }: { data: ExtraInfoType }) => {
         {
           !toggleAdd ?
             <div className=" d-flex w-100 justify-content-end info-img-wrapper">
-              <img src={detector ? "src/assets/yellowAddIcon.svg" : "src/assets/greenAddIcon.svg"} alt="Add Icon" className="position-absolute" onClick={() => setToggleAdd(!toggleAdd)} />
+              <img src={detector ? YellowAddIcon : GreenAddIcon} alt="Add Icon" className="position-absolute" onClick={() => setToggleAdd(!toggleAdd)} />
             </div>
             :
             null
@@ -78,7 +80,7 @@ const InfoAdder = ({ data }: { data: ExtraInfoType }) => {
             <div className="d-flex w-100 justify-content-evenly align-items-center">
               <h3>{detector && userData[detector] ? data.titleAfterSubmit : data.titleBeforSubmit}</h3>
               {
-                detector && userData[detector] ? <img src="src/assets/goTo.svg" alt="new tab icon" className="position-absolute newTabImage"/> : null
+                detector && userData[detector] ? <img src={GoToIcon} alt="new tab icon" className="position-absolute newTabImage"/> : null
               }
             </div>
             :
